@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "noImplicitAny": false,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -14,7 +15,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@crypto-market-data/market-data": ["libs/market-data/src/index.ts"],
+      "@crypto-market-data/market-data-context": [
+        "libs/market-data-context/src/index.ts"
+      ],
+      "@crypto-market-data/market-data-request": [
+        "libs/market-data-request/src/index.ts"
+      ],
+      "@crypto-market-data/query-form": ["libs/query-form/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

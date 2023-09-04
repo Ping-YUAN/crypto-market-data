@@ -1,16 +1,19 @@
 import styled from 'styled-components';
-
-import NxWelcome from './nx-welcome';
-
+import { QueryForm } from '@crypto-market-data/query-form';
+import { MarketDataProvider } from '@crypto-market-data/market-data-context';
+import { MarketData } from '@crypto-market-data/market-data';
 const StyledApp = styled.div`
   // Your style here
 `;
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="crypto-market-data" />
-    </StyledApp>
+    <MarketDataProvider>
+      <StyledApp>
+        <QueryForm></QueryForm>
+        <MarketData></MarketData>
+      </StyledApp>
+    </MarketDataProvider>
   );
 }
 
