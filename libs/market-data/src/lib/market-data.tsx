@@ -1,24 +1,30 @@
 import { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { MarketDataContext } from '@crypto-market-data/market-data-context';
-/* eslint-disable-next-line */
-export interface MarketDataProps {}
+import { MarketDataTicker } from './market-data-ticker/market-data-ticker';
+import { MarketDataTicker24h } from './market-data-ticker-24h/market-data-ticker-24h';
+import { MarketDataRecentTrade } from './market-data-recent-trade/market-data-recent-trade';
 
 const StyledMarketData = styled.div`
-  color: pink;
+  width: 80%;
+  margin-top: 24px;
+  .market-data-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
 `;
 
-export function MarketData(props: MarketDataProps) {
-  const { currency } = useContext(MarketDataContext);
-  useEffect(() => {
-    if (currency) {
-      console.log('currency changed ');
-      // fetch(``, {method:'post'})
-    }
-  }, [currency]);
+export function MarketData() {
   return (
     <StyledMarketData>
-      <h1>Welcome to MarketData {currency}! </h1>
+      <div className="market-data-card">
+        <MarketDataTicker />
+        <MarketDataTicker24h></MarketDataTicker24h>
+      </div>
+      <MarketDataRecentTrade></MarketDataRecentTrade>
     </StyledMarketData>
   );
 }

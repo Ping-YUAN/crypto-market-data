@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve crypto-market-data",
+    "test:e2e": "nx e2e crypto-market-data-e2e",
+    "test:cov": "jest --ci --coverage --maxWorkers=1",
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check"

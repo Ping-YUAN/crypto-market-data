@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import MarketDataContext from './market-data-context';
+import { MarketDataProvider } from './market-data-context';
 
-describe('MarketDataContext', () => {
+describe('MarketDataProvider', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<MarketDataContext />);
+    const { baseElement } = render(<MarketDataProvider children={undefined} />);
     expect(baseElement).toBeTruthy();
   });
 });
