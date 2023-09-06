@@ -14,6 +14,6 @@ For e2e test: [Playwright](https://playwright.dev/)
 
 ## Commands
 
-To start application run: `npm start` <br/>
+To start application run: `npm start`  then goto: `localhost:4200`<br/>
 To check e2e test: `npm run e2e` <br/>
 To check unit test and code coverage: `npm run test:cov`
